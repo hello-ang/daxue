@@ -1,0 +1,26 @@
+[
+    {
+        "id": "1",
+        "username": "123",
+        "password": "pbkdf2:sha256:600000$N9SZATDgzlEH2WbO$01a019f3395b44ae972e3cb5fa8d47f04cd8ca2334080edcf1954c75ddf5549b",
+        "created_at": "2024-11-27T10:30:47.379360"
+    },
+    {
+        "id": "2",
+        "username": "杨如斌",
+        "password": "pbkdf2:sha256:600000$OppmF0ll2b9YpVpI$446afc701ed69ea27163c2521058f9f1dda87f8d1f1f4de1aad408be83f6fcf2",
+        "created_at": "2024-11-27T10:48:06.757244"
+    },
+    {
+        "id": "3",
+        "username": "CC",
+        "password": "pbkdf2:sha256:600000$UVpYUfJlbjmqassI$27e0482ad97fb66877eeb861d1452643981f7e82ca5a2dd181a7ea676e607a0d",
+        "created_at": "2024-11-28T12:04:28.288046"
+    },
+    {
+        "id": "4",
+        "username": "张点",
+        "password": "pbkdf2:sha256:600000$ixbKnIpx1KogHx2v$a4fb3421769f99e75b04edd316f9fdd90ac1eafe17456bde64e3aae21e3fc9c3",
+        "created_at": "2024-12-02T10:36:57.843326"
+    }
+]

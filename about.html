@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VR岷县 - 岷县文化宣传</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/about.css">
+    <style>
+        /* 加载遮罩样式 */
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            transition: opacity 0.5s ease;
+        }
+        
+        .loading-overlay.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #C62828;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* 隐藏广告元素 */
+        iframe {
+            filter: brightness(1.1) contrast(1.1);
+        }
+    </style>
+</head>
+<body>
+    <!-- 加载遮罩 -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <!-- 头部区域 -->
+    <div class="header">
+        <span class="header-text">千年药乡</span>
+        <img src="./images/LOOG.jpg" alt="岷县文化Logo">
+        <span class="header-text">当归岷州</span>
+    </div>
+
+    <!-- 导航栏 -->
+    <nav class="nav">
+        <button class="menu-toggle">☰</button>
+        <div class="nav-container">
+            <a href="index.html">首页</a>
+            <a href="culture.html">文化特色</a>
+            <a href="tourism.html">旅游信息</a>
+            <a href="history.html">历史背景</a>
+            <a href="specialties.html">特产美食</a>
+            <a href="folklore.html">民俗风情</a>
+            <a href="interaction.html">互动交流</a>
+            <a href="about.html" class="active">VR岷县</a>
+            <a href="author.html">作者信息</a>
+        </div>
+    </nav>
+    <a href="ai-chat.html" class="ai-assistant"><i class="fas fa-robot"></i> AI岷州助手</a>
+
+    <!-- 主要内容区域 -->
+    <main class="main-content">
+        <!-- VR全景展示 -->
+        <section class="hero" style="padding:0; background:none; box-shadow:none;">
+            <div style="width:100%;height:100vh;overflow:hidden;position:relative;">
+                <iframe 
+                    src="https://www.720yun.com/t/90vkny2m78l?scene_id=30008549" 
+                    width="100%" 
+                    height="100%" 
+                    frameborder="0" 
+                    allowfullscreen
+                    onload="document.getElementById('loadingOverlay').classList.add('hidden')"
+                ></iframe>
+                <!-- 遮罩层 -->
+                <div style="
+                    position:absolute;
+                    top:0; left:0;
+                    width:220px; height:60px;
+                    background:linear-gradient(90deg,rgba(255,255,255,0.95) 70%,rgba(255,255,255,0) 100%);
+                    z-index:2;
+                    border-radius:24px 0 0 0;
+                    pointer-events:none;
+                "></div>
+                <!-- 居中标题和副标题 -->
+                <div style="
+                    position:absolute;
+                    top:50%;
+                    left:50%;
+                    transform:translate(-50%,-50%);
+                    z-index:3;
+                    display:flex;
+                    flex-direction:column;
+                    align-items:center;
+                    justify-content:center;
+                    width:80%;
+                    max-width:600px;
+                    background:rgba(0,0,0,0.32);
+                    border-radius:18px;
+                    padding:32px 16px 24px 16px;
+                    box-shadow:0 4px 32px rgba(0,0,0,0.18);
+                ">
+                    <h1 style="color:#fff;font-size:3.2em;font-weight:900;margin:0 0 18px 0;text-shadow:0 4px 18px rgba(0,0,0,0.45),0 1px 0 #333;letter-spacing:2px;">VR岷县</h1>
+                    <p style="color:#fff;font-size:1.5em;font-weight:400;margin:0;text-shadow:0 2px 8px rgba(0,0,0,0.35);letter-spacing:1px;">千年药乡 多彩岷州</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <p>版权所有 &copy; 2024 千年药乡 多彩岷州</p>
+    </footer>
+
+    <!-- 在body结束标签前添加 -->
+    <script src="js/about.js"></script>
+</body>
+</html>

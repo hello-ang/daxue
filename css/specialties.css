@@ -1,0 +1,554 @@
+/* 基础样式重置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 主要内容区域 */
+.main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* 英雄区域样式 */
+.hero {
+    height: 400px;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                url('../images/界面五/当归.webp') center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 60px;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+    animation: shine 3s infinite;
+}
+
+.hero-content {
+    text-align: center;
+    color: white;
+    opacity: 0;
+    animation: scaleIn 0.8s ease forwards 0.3s;
+}
+
+.hero-content h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-content p {
+    font-size: 1.2em;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* 通用section样式 */
+.section-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-header h2 {
+    font-size: 2.5em;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.section-header p {
+    color: #7f8c8d;
+    font-size: 1.2em;
+}
+
+/* 药材展示区样式 */
+.herbs-section {
+    margin-bottom: 60px;
+}
+
+.featured-herb {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 40px;
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease;
+    position: relative;
+    background: linear-gradient(145deg, #ffffff, #f5f5f5);
+}
+
+.featured-herb:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15),
+                0 0 20px rgba(231, 76, 60, 0.3),
+                0 0 40px rgba(231, 76, 60, 0.2);
+}
+
+.herb-image {
+    position: relative;
+    height: 400px;
+}
+
+.herb-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.certification-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #e74c3c;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 0.9em;
+    transform: translateX(100%);
+    opacity: 0;
+    transition: all 0.4s ease;
+    background: linear-gradient(90deg, #e74c3c, #c0392b);
+    animation: glow 2s infinite;
+}
+
+.herb-image:hover .certification-badge {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.herb-details {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.herb-details h3 {
+    font-size: 2em;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.herb-description {
+    color: #7f8c8d;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.herb-features {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.herb-features li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #2c3e50;
+}
+
+.icon {
+    font-size: 1.5em;
+}
+
+.herbs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.herb-card {
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    position: relative;
+    background: linear-gradient(145deg, #ffffff, #f5f5f5);
+}
+
+.herb-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.3),
+        transparent
+    );
+    animation: shimmer 4s infinite;
+}
+
+.herb-card:hover::before {
+    left: 200%;
+    transition: 0.5s;
+}
+
+.herb-card:hover {
+    transform: translateY(-10px);
+}
+
+.herb-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 20px;
+    text-align: center;
+}
+
+.card-content h4 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.card-content p {
+    color: #7f8c8d;
+}
+
+/* 美食展示区样式 */
+.food-section {
+    margin-bottom: 60px;
+}
+
+.food-showcase {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.food-card {
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    position: relative;
+}
+
+.food-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        45deg,
+        transparent 40%,
+        rgba(231, 76, 60, 0.1) 45%,
+        rgba(231, 76, 60, 0.2) 50%,
+        rgba(231, 76, 60, 0.1) 55%,
+        transparent 60%
+    );
+    animation: shimmer 5s infinite;
+    transform: none;
+}
+
+.food-card:hover::after {
+    transform: translateX(100%);
+}
+
+.food-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.food-image {
+    height: 250px;
+    overflow: hidden;
+}
+
+.food-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.food-card:hover .food-image img {
+    transform: scale(1.1);
+}
+
+.food-info {
+    padding: 20px;
+}
+
+.food-info h3 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.food-info p {
+    color: #7f8c8d;
+    margin-bottom: 15px;
+}
+
+.tags {
+    display: flex;
+    gap: 10px;
+}
+
+.tags span {
+    background: #f0f2f5;
+    color: #2c3e50;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    background: linear-gradient(90deg, #f0f2f5, #e6e9ed);
+    position: relative;
+    overflow: hidden;
+    animation: pulse 3s infinite;
+}
+
+.tags span::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(
+        circle,
+        rgba(231, 76, 60, 0.2) 0%,
+        transparent 70%
+    );
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.tags span:hover::after {
+    opacity: 1;
+}
+
+/* 购买指南样式 */
+.buying-guide {
+    margin-bottom: 60px;
+}
+
+.guide-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.guide-box {
+    background: #fff;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    background: linear-gradient(145deg, #ffffff, #f5f5f5);
+    position: relative;
+    overflow: hidden;
+}
+
+.guide-box::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(
+        circle,
+        rgba(231, 76, 60, 0.1) 0%,
+        transparent 70%
+    );
+    animation: pulse 4s infinite;
+    opacity: 1;
+    transform: none;
+}
+
+.guide-box:hover::before {
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+.guide-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.guide-box h3 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #e74c3c;
+}
+
+.guide-box ul {
+    list-style: none;
+}
+
+.guide-box ul li {
+    margin-bottom: 15px;
+    padding-left: 20px;
+    position: relative;
+    color: #7f8c8d;
+}
+
+.guide-box ul li::before {
+    content: '•';
+    color: #e74c3c;
+    position: absolute;
+    left: 0;
+}
+
+.channel-info {
+    display: grid;
+    gap: 20px;
+}
+
+.channel h4 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.channel p {
+    color: #7f8c8d;
+    margin-bottom: 5px;
+}
+
+.storage-tips {
+    display: grid;
+    gap: 15px;
+}
+
+.storage-tips p {
+    color: #7f8c8d;
+    padding-left: 20px;
+    position: relative;
+}
+
+.storage-tips p::before {
+    content: '✓';
+    color: #27ae60;
+    position: absolute;
+    left: 0;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .hero {
+        height: 300px;
+    }
+
+    .hero-content h1 {
+        font-size: 2em;
+    }
+
+    .featured-herb {
+        grid-template-columns: 1fr;
+    }
+
+    .herb-image {
+        height: 300px;
+    }
+
+    .herb-features {
+        grid-template-columns: 1fr;
+    }
+
+    .guide-container {
+        grid-template-columns: 1fr;
+    }
+} 
+
+/* 在文件开头添加关键帧动画定义 */
+@keyframes shine {
+    0% {
+        background-position: -100% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 5px rgba(231, 76, 60, 0.2),
+                   0 0 10px rgba(231, 76, 60, 0.2);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(231, 76, 60, 0.4),
+                   0 0 30px rgba(231, 76, 60, 0.2);
+    }
+    100% {
+        box-shadow: 0 0 5px rgba(231, 76, 60, 0.2),
+                   0 0 10px rgba(231, 76, 60, 0.2);
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0.4;
+    }
+    50% {
+        opacity: 0.8;
+    }
+    100% {
+        opacity: 0.4;
+    }
+}
+
+/* 添加交错动画延迟 */
+.herb-card:nth-child(2n)::before {
+    animation-delay: 1s;
+}
+
+.food-card:nth-child(2n)::after {
+    animation-delay: 1.5s;
+}
+
+.food-card:nth-child(3n)::after {
+    animation-delay: 2s;
+}
+
+.guide-box:nth-child(2n)::before {
+    animation-delay: 1s;
+}
+
+.guide-box:nth-child(3n)::before {
+    animation-delay: 2s;
+}
+
+.tags span:nth-child(2n) {
+    animation-delay: 1s;
+} 

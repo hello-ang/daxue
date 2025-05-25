@@ -1,0 +1,433 @@
+/* 设置横幅图片样式 */
+.banner img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* 设置轮播图相关样式 */
+.carousel {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    display: none;
+}
+
+.carousel img.active {
+    display: block;
+}
+
+.carousel .prev,
+.carousel .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.carousel .prev {
+    left: 10px;
+}
+
+.carousel .next {
+    right: 10px;
+}
+
+/* 设置正文样式 */
+.main-text {
+    margin-top: 20px;
+    line-height: 1.6;
+}
+
+/* 设置嵌套图片样式 */
+.embedded-image {
+    max-width: 100%;
+    height: auto;
+    float: left;
+    margin-right: 20px;
+    margin-bottom: 10px;
+}
+
+/* 设置小吃展示区域样式 */
+.snack-section {
+    margin-top: 50px;
+    padding: 20px 0;
+    background: #f9f9f9;
+}
+
+.snack-section h2 {
+    text-align: center;
+    color: #983636;
+    margin-bottom: 30px;
+}
+
+.snack-box-container {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 300px;
+    margin: 20px 0;
+}
+
+.snack-box-wrapper {
+    display: flex;
+    animation: scroll 30s linear infinite;
+    width: fit-content;
+}
+
+.snack-box {
+    width: 280px;
+    height: 280px;
+    margin: 0 15px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+}
+
+.snack-box:hover {
+    transform: translateY(-5px);
+}
+
+.snack-box img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border: none;
+    padding: 0;
+}
+
+.snack-box p {
+    margin: 0;
+    padding: 15px 0;
+    background: #fff;
+    color: #333;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* 快讯区域样式 */
+.info-container {
+    width: 90%;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #fff;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+.info-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(to right, #c84a4a, #983636);
+}
+
+.info-header {
+    color: #983636;
+    font-size: 28px;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #f0f0f0;
+    position: relative;
+    text-align: center;
+}
+
+.info-item {
+    margin-bottom: 15px;
+    padding: 15px 20px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+}
+
+.info-item:hover {
+    background-color: #f8f8f8;
+    transform: translateX(10px);
+}
+
+.info-item .date {
+    min-width: 100px;
+    color: #666;
+    font-size: 14px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    background-color: #f0f0f0;
+    text-align: center;
+    margin-right: 15px;
+}
+
+.info-item a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    flex: 1;
+    transition: color 0.3s ease;
+}
+
+.info-item a:hover {
+    color: #c84a4a;
+    text-decoration: none;
+}
+
+/* 标题样式 */
+h2 {
+    position: relative;
+    padding-left: 15px;
+    margin: 30px 0 20px;
+}
+
+h2::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 20px;
+    background-color: #c84a4a;
+}
+
+/* 快速导航模块美化 */
+.quick-links {
+    margin: 40px auto;
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    padding: 0 20px;
+}
+
+.quick-link-item {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(152, 54, 54, 0.1);
+}
+
+.quick-link-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.quick-link-item i {
+    font-size: 32px;
+    color: #983636;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+.quick-link-item:hover i {
+    transform: scale(1.1);
+}
+
+.quick-link-item h3 {
+    color: #2c3e50;
+    font-size: 1.3em;
+    margin: 10px 0;
+}
+
+.quick-link-item p {
+    color: #666;
+    font-size: 0.95em;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* 卡片样式 */
+.card-container {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 40px;
+}
+
+.card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 24px;
+    width: 260px;
+    position: relative;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.03);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+/* 图标容器 */
+.icon-container {
+    width: 48px;
+    height: 48px;
+    position: relative;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(var(--card-rgb), 0.1);
+    transition: all 0.3s ease;
+}
+
+.icon-container i {
+    font-size: 24px;
+    color: var(--card-color);
+    transition: transform 0.3s ease;
+}
+
+/* 卡片标题 */
+.card h3 {
+    color: #666;
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0;
+}
+
+/* 数字样式 */
+.count-number {
+    font-size: 32px;
+    font-weight: 600;
+    color: var(--card-color);
+    margin: 4px 0;
+    line-height: 1.2;
+    display: flex;
+    align-items: flex-end;
+    gap: 4px;
+}
+
+/* 标签样式 */
+.count-label {
+    font-size: 13px;
+    color: #999;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.count-label i {
+    font-size: 14px;
+    color: var(--card-color);
+    opacity: 0.7;
+}
+
+/* 小图表装饰 */
+.card::after {
+    content: '';
+    position: absolute;
+    right: 24px;
+    top: 24px;
+    width: 60px;
+    height: 30px;
+    background: linear-gradient(180deg, 
+        rgba(var(--card-rgb), 0.1) 0%,
+        rgba(var(--card-rgb), 0.05) 100%);
+    border-radius: 15px;
+    opacity: 0.5;
+}
+
+/* 卡片主题颜色 */
+.card-culture {
+    --card-color: #A0522D;
+    --card-rgb: 160, 82, 45;
+}
+
+.card-tourism {
+    --card-color: #4B5CAD;
+    --card-rgb: 75, 92, 173;
+}
+
+.card-food {
+    --card-color: #8B4513;
+    --card-rgb: 139, 69, 19;
+}
+
+.card-customs {
+    --card-color: #B8860B;
+    --card-rgb: 184, 134, 11;
+}
+
+/* 悬停效果 */
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(var(--card-rgb), 0.12);
+    background: linear-gradient(
+        135deg,
+        #fff 0%,
+        rgba(var(--card-rgb), 0.03) 100%
+    );
+}
+
+.card:hover .icon-container {
+    transform: scale(1.05);
+    background: rgba(var(--card-rgb), 0.15);
+}
+
+.card:hover .icon-container i {
+    transform: scale(1.1);
+}
+
+/* 数字增长动画 */
+@keyframes countUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.count-number {
+    animation: countUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.count-label {
+    animation: countUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    animation-delay: 0.1s;
+}
+
+/* 增加趋势指示器 */
+.trend-indicator {
+    font-size: 12px;
+    padding: 4px 8px;
+    border-radius: 12px;
+    background: rgba(var(--card-rgb), 0.1);
+    color: var(--card-color);
+    margin-left: auto;
+}

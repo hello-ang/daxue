@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>旅游信息 - 岷县文化宣传</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/tourism.css">
+</head>
+<body>
+    <!-- 头部区域 -->
+    <div class="header">
+        <span class="header-text">千年药乡</span>
+        <img src="./images/LOOG.jpg" alt="岷县文化Logo">
+        <span class="header-text">当归岷州</span>
+    </div>
+
+    <!-- 导航栏 -->
+    <nav class="nav">
+        <button class="menu-toggle">☰</button>
+        <div class="nav-container">
+            <a href="index.html">首页</a>
+            <a href="culture.html">文化特色</a>
+            <a href="tourism.html" class="active">旅游信息</a>
+            <a href="history.html">历史背景</a>
+            <a href="specialties.html">特产美食</a>
+            <a href="folklore.html">民俗风情</a>
+            <a href="interaction.html">互动交流</a>
+            <a href="about.html">VR岷县</a>
+            <a href="author.html">作者信息</a>
+           
+        </div>
+    </nav>
+        <a href="ai-chat.html" class="ai-assistant"><i class="fas fa-robot"></i> AI岷州助手</a>
+
+    <div class="content">
+        <!-- 智能信息查询模块 -->
+        <section id="smart-query" class="tourism-section smart-query-section">
+            <div class="smart-query-header">
+                <h2>智能信息查询</h2>
+                <p>输入城市或地区名，一键获取美食与天气信息</p>
+            </div>
+            <div class="smart-query-search">
+                <input type="text" id="smart-city-input" placeholder="如：岷县">
+                <button id="smart-search-btn"><span class="icon-search">🔎</span> 查询</button>
+            </div>
+            <div class="smart-results-container">
+                <div class="smart-result-block">
+                    <div class="smart-result-title">美食推荐</div>
+                    <div id="smart-result-food" class="food-explore-result"></div>
+                </div>
+                <div class="smart-result-block">
+                    <div class="smart-result-title">今日天气预报</div>
+                    <div id="smart-result-weather" class="weather-result"></div>
+                </div>
+                <div class="smart-result-block">
+                    <div class="smart-result-title">酒店查询</div>
+                    <div id="smart-result-hotel" class="hotel-result"></div>
+                </div>
+            </div>
+        
+
+        <!-- 景点推荐部分 -->
+        <section id="scenic-spots" class="tourism-section">
+            <h2>特色景点</h2>
+            <div class="spot-grid">
+                <div class="spot-item">
+                    <div class="spot-image">
+                        <img src="images/界面三/草原.webp" alt="狼渡滩湿地草原">
+                        <div class="spot-tag">自然风光</div>
+                    </div>
+                    <div class="spot-info-container">
+                        <div class="spot-header">
+                            <h3>狼渡滩湿地草原</h3>
+                            <span class="spot-rating">⭐⭐⭐⭐⭐</span>
+                        </div>
+                        <p class="spot-description">位于岷县西南部，是甘肃省重要的湿地保护区。这里水草丰美，野花遍地，是观赏草原风光、体验牧民生活的理想之地。</p>
+                        <div class="spot-meta">
+                            <span class="spot-price">门票：¥60</span>
+                            <span class="spot-location"><i class="location-icon">📍</i>岷县西南部</span>
+                            <span class="spot-time"><i class="time-icon">🕒</i>建议游览2-3小时</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="spot-item">
+                    <div class="spot-image">
+                        <img src="images/界面三/双燕.webp" alt="双燕生态景区">
+                        <div class="spot-tag">生态观光</div>
+                    </div>
+                    <div class="spot-info-container">
+                        <div class="spot-header">
+                            <h3>双燕生态景区</h3>
+                            <span class="spot-rating">⭐⭐⭐⭐</span>
+                        </div>
+                        <p class="spot-description">景区内有大片的中药材种植基地，是集观光、科普、休闲于一体的生态旅游区。春季可观赏漫山遍野的当归花海，秋季可体验药材采收。</p>
+                        <div class="spot-meta">
+                            <span class="spot-price">门票：¥40</span>
+                            <span class="spot-location"><i class="location-icon">📍</i>岷县城东15公里</span>
+                            <span class="spot-time"><i class="time-icon">🕒</i>建议游览3-4小时</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="spot-item">
+                    <div class="spot-image">
+                        <img src="images/界面三/岷州会议.webp" alt="岷州会议会址">
+                        <div class="spot-tag">红色旅游</div>
+                    </div>
+                    <div class="spot-info-container">
+                        <div class="spot-header">
+                            <h3>岷州会议会址</h3>
+                            <span class="spot-rating">⭐⭐⭐⭐⭐</span>
+                        </div>
+                        <p class="spot-description">这里是1935年红军长征经过岷县时召开重要会议的历史见证地，现已改建为革命纪念馆，陈列着大量珍贵的历史文物和图片资料。</p>
+                        <div class="spot-meta">
+                            <span class="spot-price">门票：免费</span>
+                            <span class="spot-location"><i class="location-icon">📍</i>岷县城区</span>
+                            <span class="spot-time"><i class="time-icon">🕒</i>建议游览1-2小时</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 精品线路部分 -->
+        <section id="routes" class="tourism-section">
+            <h2>精品线路</h2>
+            <div class="route-list">
+                <div class="route-item">
+                    <div class="route-header">
+                        <h3>红色文化寻访之旅</h3>
+                        <span class="route-duration">2天1晚</span>
+                    </div>
+                    <div class="route-content">
+                        <div class="route-map">
+                            <img src="images/界面三/红色.jpg" alt="红色文化线路图">
+                        </div>
+                        <div class="route-details">
+                            <div class="route-day">
+                                <h4>第一天</h4>
+                                <ul>
+                                    <li>上午：参观岷州会议会址</li>
+                                    <li>下午：游览三十里铺红军长征纪念馆</li>
+                                    <li>晚上：品尝岷县特色美食</li>
+                                </ul>
+                            </div>
+                            <div class="route-day">
+                                <h4>第二天</h4>
+                                <ul>
+                                    <li>上午：参观红军长征纪念碑</li>
+                                    <li>下午：体验当地民俗文化</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="route-item">
+                    <div class="route-header">
+                        <h3>药乡风情体验之旅</h3>
+                        <span class="route-duration">3天2晚</span>
+                    </div>
+                    <div class="route-content">
+                        <div class="route-map">
+                            <img src="images/界面三/路线.jpg" alt="药乡风情线路图">
+                        </div>
+                        <div class="route-details">
+                            <div class="route-day">
+                                <h4>第一天</h4>
+                                <ul>
+                                    <li>上午：参观当归博物馆</li>
+                                    <li>下午：游览中药材种植基地</li>
+                                </ul>
+                            </div>
+                            <div class="route-day">
+                                <h4>第二天</h4>
+                                <ul>
+                                    <li>全天：狼渡滩湿地草原游览</li>
+                                </ul>
+                            </div>
+                            <div class="route-day">
+                                <h4>第三天</h4>
+                                <ul>
+                                    <li>上午：参观药材交易市场</li>
+                                    <li>下午：体验中药材加工工艺</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 旅游资讯部分 -->
+        <section id="info" class="tourism-section">
+            <h2>旅游资讯</h2>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>交通指南</h3>
+                    <div class="info-content">
+                        <p><strong>自驾路线：</strong>兰州-岷县（约2小时）</p>
+                        <p><strong>公共交通：</strong>兰州汽车站有直达岷县的班车</p>
+                        <p><strong>公共交通：</strong>兰州火车站有直达岷县的列车</p>
+                        <p><strong>最近机场：</strong>兰州中川国际机场（约200公里）</p>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <h3>住宿推荐</h3>
+                    <div class="info-content">
+                        <p><strong>城区酒店：</strong>岷州大酒店、洮岷国际大酒店、金当归酒店</p>
+                        <p><strong>特色住宿：</strong>狼渡滩草原牧家乐</p>
+                        <p><strong>价格区间：</strong>100-300元/晚</p>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <h3>最佳游玩时间</h3>
+                    <div class="info-content">
+                        <p><strong>春季（4-5月）：</strong>赏当归花海</p>
+                        <p><strong>夏季（7-8月）：</strong>草原避暑</p>
+                        <p><strong>秋季（9-10月）：</strong>药材采收季</p>
+                        <p><strong>冬季（11-2月）：</strong>体验冰雪城堡</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 在 routes section 后面添加新的板块 -->
+        <section id="seasonal-activities" class="tourism-section">
+            <h2>四季特色活动</h2>
+            <div class="season-grid">
+                <div class="season-card spring">
+                    <div class="season-image">
+                        <img src="images/界面三/花海.webp" alt="春季当归花海">
+                        <span class="season-label">春季</span>
+                    </div>
+                    <div class="season-content">
+                        <h3>春日赏花季</h3>
+                        <ul>
+                            <li>当归花海观赏（4月中旬-5月）</li>
+                            <li>春季药材种植体验</li>
+                            <li>踏青采摘活动</li>
+                            <li>农耕文化体验</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="season-card summer">
+                    <div class="season-image">
+                        <img src="images/界面三/夏季.webp" alt="夏季草原">
+                        <span class="season-label">夏季</span>
+                    </div>
+                    <div class="season-content">
+                        <h3>避暑休闲季</h3>
+                        <ul>
+                            <li>草原露营节（7月-8月）</li>
+                            <li>民族歌舞表演</li>
+                            <li>草原骑马体验</li>
+                            <li>农家美食品鉴</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="season-card autumn">
+                    <div class="season-image">
+                        <img src="images/界面三/秋季.jpg" alt="秋季采收">
+                        <span class="season-label">秋季</span>
+                    </div>
+                    <div class="season-content">
+                        <h3>金秋采收季</h3>
+                        <ul>
+                            <li>中药材采收节（9月-10月）</li>
+                            <li>农产品展销会</li>
+                            <li>药膳文化节</li>
+                            <li>摄影采风活动</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="season-card winter">
+                    <div class="season-image">
+                        <img src="images/界面三/冬季.webp" alt="冬季雪景">
+                        <span class="season-label">冬季</span>
+                    </div>
+                    <div class="season-content">
+                        <h3>冰雪欢乐季</h3>
+                        <ul>
+                            <li>冰雪城堡游览（12月-次年2月）</li>
+                            <li>温泉养生之旅</li>
+                            <li>冬季民俗活动</li>
+                            <li>年货采购节</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 添加美食推荐板块 -->
+        <section id="food-recommendation" class="tourism-section">
+            <h2>特色美食推荐</h2>
+            <div class="food-slider">
+                <div class="food-card">
+                    <img src="images/界面三/羊肉.webp" alt="岷县羊肉">
+                    <div class="food-info">
+                        <h3>岷县羊肉</h3>
+                        <p>岷县特色清真美食，肉质鲜美，营养丰富</p>
+                        <div class="food-tags">
+                            <span>清真</span>
+                            <span>地方特色</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="food-card">
+                    <img src="images/界面三/美食.webp" alt="当归养生宴">
+                    <div class="food-info">
+                        <h3>当归养生宴</h3>
+                        <p>融合当地中药材的特色养生美食</p>
+                        <div class="food-tags">
+                            <span>养生</span>
+                            <span>药膳</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- 可以继续添加更多美食卡片 -->
+            </div>
+        </section>
+
+        <!-- 添加游客服务中心板块 -->
+        <section id="tourist-service" class="tourism-section">
+            <h2>游客服务</h2>
+            <div class="service-container">
+                <div class="service-item">
+                    <i class="service-icon">🏥</i>
+                    <h3>医疗救助</h3>
+                    <p>紧急救援电话：120</p>
+                    <p>最近医院：岷县人民医院</p>
+                </div>
+                <div class="service-item">
+                    <i class="service-icon">🚔</i>
+                    <h3>安全保障</h3>
+                    <p>报警电话：110</p>
+                    <p>旅游警察：13830247311</p>
+                </div>
+                <div class="service-item">
+                    <i class="service-icon">ℹ️</i>
+                    <h3>咨询服务</h3>
+                    <p>旅游咨询：13830247311</p>
+                    <p>投诉电话：13830247311</p>
+                </div>
+                <div class="service-item">
+                    <i class="service-icon">🚌</i>
+                    <h3>交通服务</h3>
+                    <p>出租车电话：13830247311</p>
+                    <p>公交查询：13830247311</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- 页脚部分 -->
+    <div class="footer">
+        <p>版权所有 &copy; 2024 千年药乡 多彩岷州</p>
+    </div>
+
+    <script>
+        // 页面加载完成后初始化
+        document.addEventListener('DOMContentLoaded', () => {
+            // 添加loaded类，显示所有内容
+            document.querySelector('.content').classList.add('loaded');
+            
+            // 初始化滚动监听
+            handleScroll();
+            window.addEventListener('scroll', handleScroll);
+
+            // 导航栏响应
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navContainer = document.querySelector('.nav-container');
+            
+            menuToggle.addEventListener('click', () => {
+                navContainer.classList.toggle('active');
+            });
+
+            // ===== 智能信息查询API集成 =====
+            const smartResultFood = document.getElementById('smart-result-food');
+            const smartResultWeather = document.getElementById('smart-result-weather');
+            const smartResultHotel = document.getElementById('smart-result-hotel');
+            const smartQuerySection = document.getElementById('smart-query');
+
+            document.getElementById('smart-search-btn').onclick = function() {
+                const city = document.getElementById('smart-city-input').value.trim();
+                if (!city) {
+                    smartResultFood.innerHTML = '<p style="color:red;">请输入城市或地区名！</p>';
+                    smartResultWeather.innerHTML = '<p style="color:red;">请输入城市或地区名！</p>';
+                    smartResultHotel.innerHTML = '<p style="color:red;">请输入城市或地区名！</p>';
+                    return;
+                }
+                smartResultFood.innerHTML = '查询中...';
+                smartResultWeather.innerHTML = '查询中...';
+                smartResultHotel.innerHTML = '查询中...';
+
+                fetch('https://route.showapi.com/3215-1', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    },
+                    body: `appKey=41a285C8c5fC4b11bF32B37115EB59D6&area=${encodeURIComponent(city)}`
+                })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.showapi_res_code === 0 && data.showapi_res_body && data.showapi_res_body.mealList) {
+                        const meals = data.showapi_res_body.mealList;
+                        if (meals.length === 0) {
+                            smartResultFood.innerHTML = '<p>未找到相关美食信息。</p>';
+                        } else {
+                            smartResultFood.innerHTML = meals.map(meal => `
+                                <div class="food-card">
+                                    <div class="food-card-title">${meal.name}</div>
+                                    <div class="food-card-desc">${meal.description}</div>
+                                </div>
+                            `).join('');
+                        }
+                    } else {
+                        smartResultFood.innerHTML = '<p style="color:red;">未查询到数据，请检查城市名或稍后再试。</p>';
+                    }
+                })
+                .catch(err => {
+                    smartResultFood.innerHTML = '<p style="color:red;">查询失败，可能是网络或接口问题。</p>';
+                });
+
+                fetch('https://route.showapi.com/9-2', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    },
+                    body: `appKey=41a285C8c5fC4b11bF32B37115EB59D6&area=${encodeURIComponent(city)}`
+                })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.showapi_res_code === 0 && data.showapi_res_body && data.showapi_res_body.now) {
+                        const now = data.showapi_res_body.now;
+                        const cityInfo = data.showapi_res_body.cityInfo || {};
+                        smartResultWeather.innerHTML = `
+                            <div class="weather-card">
+                                <div class="weather-card-title">${cityInfo.c3 || city} 当前天气</div>
+                                <div class="weather-card-desc">
+                                    <strong>温度：</strong>${now.temperature}℃<br>
+                                    <strong>天气：</strong>${now.weather}<br>
+                                    <strong>风力：</strong>${now.wind_power}<br>
+                                    <strong>风向：</strong>${now.wind_direction}<br>
+                                    <strong>湿度：</strong>${now.sd || '-'}<br>
+                                    <strong>发布时间：</strong>${data.showapi_res_body.fct} 
+                                </div>
+                            </div>
+                        `;
+                    } else {
+                        smartResultWeather.innerHTML = '<p style="color:red;">未查询到天气数据，请检查城市名或稍后再试。</p>';
+                    }
+                })
+                .catch(err => {
+                    smartResultWeather.innerHTML = '<p style="color:red;">查询失败，可能是网络或接口问题。</p>';
+                });
+
+                const hotelApiUrl = `https://restapi.amap.com/v3/place/text?key=a029f267d9528aeaa42bb843c4897e9cb&keywords=酒店&city=${encodeURIComponent(city)}&output=json`;
+                fetch(hotelApiUrl)
+                .then(res => res.json())
+                .then(data => {
+                    if (data.status === '1' && data.pois && data.pois.length > 0) {
+                        const hotels = data.pois;
+                        smartResultHotel.innerHTML = hotels.map(hotel => `
+                            <div class="hotel-card">
+                                <div class="hotel-card-title">${hotel.name}</div>
+                                <div class="hotel-card-address"><strong>地址：</strong>${hotel.address || '暂无'}</div>
+                                <div class="hotel-card-tel"><strong>电话：</strong>${hotel.tel || '暂无'}</div>
+                            </div>
+                        `).join('');
+                    } else {
+                        smartResultHotel.innerHTML = '<p>未找到相关酒店信息。</p>';
+                    }
+                })
+                .catch(err => {
+                    smartResultHotel.innerHTML = '<p style="color:red;">查询失败，请稍后再试。</p>';
+                });
+            };
+            // ===== 智能信息查询API集成 END =====
+
+            // ===== 酒店查询API集成 =====
+            const hotelResult = document.getElementById('hotel-result');
+            document.getElementById('hotel-search-btn').onclick = function() {
+                const city = document.getElementById('hotel-city-input').value.trim();
+                if (!city) {
+                    hotelResult.innerHTML = '<p style="color:red;">请输入城市或地区名！</p>';
+                    return;
+                }
+                hotelResult.innerHTML = '查询中...';
+
+                // 高德POI搜索API接口，type=酒店
+                const apiUrl = `https://restapi.amap.com/v3/place/text?key=a029f267d9528aeaa42bb843c4897e9cb&keywords=酒店&city=${encodeURIComponent(city)}&output=json`;
+
+                fetch(apiUrl)
+                .then(res => res.json())
+                .then(data => {
+                    if (data.status === '1' && data.pois && data.pois.length > 0) {
+                        const hotels = data.pois;
+                        hotelResult.innerHTML = hotels.map(hotel => `
+                            <div class="hotel-card">
+                                <div class="hotel-card-title">${hotel.name}</div>
+                                <div class="hotel-card-address"><strong>地址：</strong>${hotel.address || '暂无'}</div>
+                                <div class="hotel-card-tel"><strong>电话：</strong>${hotel.tel || '暂无'}</div>
+                            </div>
+                        `).join('');
+                    } else {
+                        hotelResult.innerHTML = '<p>未找到相关酒店信息。</p>';
+                    }
+                })
+                .catch(err => {
+                    hotelResult.innerHTML = '<p style="color:red;">查询失败，请稍后再试。</p>';
+                });
+            };
+            // ===== 酒店查询API集成 END =====
+        });
+
+        // 滚动触发动画
+        function handleScroll() {
+            const elements = document.querySelectorAll('.tourism-section, .spot-item, .route-item, .info-card, .season-card, .food-card, .service-item');
+            
+            elements.forEach(element => {
+                const rect = element.getBoundingClientRect();
+                const isVisible = (rect.top <= window.innerHeight * 0.8);
+                
+                if (isVisible) {
+                    element.classList.add('visible');
+                }
+            });
+        }
+
+        // 监听滚动事件
+        window.addEventListener('scroll', handleScroll);
+        // 页面加载时也检查一次
+        window.addEventListener('load', handleScroll);
+    </script>
+</body>
+</html>

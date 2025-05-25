@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>互动交流 - 岷县文化宣传</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/interaction.css">
+    <link rel="stylesheet" href="css/delete-button.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+        <!-- 头部区域 -->
+        <div class="header">
+            <span class="header-text">千年药乡</span>
+            <img src="./images/LOOG.jpg" alt="岷县文化Logo">
+            <span class="header-text">当归岷州</span>
+        </div>
+
+        <!-- 导航栏 -->
+        <nav class="nav">
+            <button class="menu-toggle">☰</button>
+            <div class="nav-container">
+                <a href="index.html">首页</a>
+                <a href="culture.html">文化特色</a>
+                <a href="tourism.html">旅游信息</a>
+                <a href="history.html">历史背景</a>
+                <a href="specialties.html">特产美食</a>
+                <a href="folklore.html">民俗风情</a>
+                <a href="interaction.html" class="active">互动交流</a>
+                <a href="about.html">关于岷县</a>
+                <a href="author.html">作者信息</a>
+            </div>
+        </nav>
+        <a href="ai-chat.html" class="ai-assistant"><i class="fas fa-robot"></i> AI岷州助手</a>
+
+    <div class="content">
+        <!-- 用户认证部分 -->
+        <section id="auth" class="interaction-section">
+            <div class="auth-section" id="authSection">
+                <div class="login-form" id="loginForm">
+                    <h2>用户登录</h2>
+                    <div class="form-group">
+                        <input type="text" id="loginUsername" placeholder="用户名">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="loginPassword" placeholder="密码">
+                    </div>
+                    <button type="button" onclick="handleLogin()" class="submit-btn">登录</button>
+                    <p class="auth-switch">还没有账号？<a href="javascript:void(0);" onclick="showRegisterForm()">立即注册</a></p>
+                </div>
+                
+                <div class="register-form" id="registerForm" style="display: none;">
+                    <h2>用户注册</h2>
+                    <div class="form-group">
+                        <input type="text" id="registerUsername" placeholder="用户名">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="registerPassword" placeholder="密码">
+                    </div>
+                    <button type="button" onclick="handleRegister()" class="submit-btn">注册</button>
+                    <p class="auth-switch">已有账号？<a href="javascript:void(0);" onclick="showLoginForm()">立即登录</a></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 文章发布部分 -->
+        <section id="publish" class="interaction-section" style="display: none;">
+            <div class="user-toolbar">
+                <div class="user-info">
+                    <i class="fas fa-user-circle"></i>
+                    <span id="currentUsername"></span>
+                </div>
+                <button onclick="handleLogout()" class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i> 退出登录
+                </button>
+            </div>
+            
+            <h2>发布文章</h2>
+            <div class="article-form" id="articleForm">
+                <div class="form-group">
+                    <input type="text" id="articleTitle" placeholder="文章标题">
+                </div>
+                <div class="form-group">
+                    <textarea id="articleContent" placeholder="文章内容" rows="6"></textarea>
+                </div>
+                <div class="image-upload-container">
+                    <div class="image-preview" id="imagePreview"></div>
+                    <label for="imageInput" class="image-upload-btn">
+                        <i class="fas fa-camera"></i> 添加图片
+                    </label>
+                    <input type="file" id="imageInput" accept="image/*" multiple style="display: none" onchange="handleImageUpload(event)">
+                </div>
+                <button onclick="handleArticleSubmit()" class="submit-btn">发布文章</button>
+            </div>
+        </section>
+
+        <!-- 文章列表部分 -->
+        <section id="articles" class="interaction-section">
+            <h2>文章列表</h2>
+            <div class="articles-container" id="articlesContainer">
+                <!-- 文章将通过JavaScript动态添加 -->
+            </div>
+        </section>
+    </div>
+
+    <!-- 页脚部分 -->
+    <div class="footer">
+        <p>版权所有 &copy; 2024 千年药乡 多彩岷州</p>
+    </div>
+
+    <!-- 添加模态框 -->
+    <div class="image-modal" id="imageModal">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
+    <script src="js/common.js"></script>
+    <script src="js/interaction.js"></script>
+</body>
+</html> 

@@ -1,0 +1,461 @@
+/* ==========================================================================
+   1. 全局样式
+   ========================================================================== */
+/* 重置默认样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 基础字体和颜色设置 */
+body {
+    font-family: "Microsoft YaHei", sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+   2. 布局组件
+   ========================================================================== */
+/* 头部导航样式 */
+.header {
+    background: linear-gradient(135deg, #f8f8f8 0%, #ffffff 100%);
+    padding: 10px 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.header img {
+    height: 40px;
+    vertical-align: middle;
+    transition: transform 0.3s ease;
+}
+
+.header-text {
+    font-size: 20px;
+    font-weight: bold;
+    color: #b13e3e;
+    margin: 0 20px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* 导航栏样式 */
+.nav {
+    background: linear-gradient(145deg, #b13e3e, #8b2727);
+    position: sticky;
+    top: 0;
+    overflow: hidden;
+    padding: 15px 20px;
+    box-shadow: 0 2px 15px rgba(139, 39, 39, 0.4);
+    z-index: 100;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.nav::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.3),
+        transparent
+    );
+    animation: navShine 4s infinite;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* 导航链接基础样式 */
+.nav a {
+    position: relative;
+    overflow: hidden;
+    color: white;
+    text-decoration: none;
+    padding: 8px 20px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    font-size: 1.1em;
+}
+
+/* 导航链接悬停状态 */
+.nav a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+/* 当前激活的导航链接基础样式 */
+.nav a.active {
+    background: rgba(255, 255, 255, 0.15);  /* 使用半透明白色作为基础 */
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+    color: white;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(5px);  /* 添加模糊效果 */
+}
+
+/* 为激活项添加特殊动效 */
+.nav a.active::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(
+        circle,
+        rgba(255, 255, 255, 0.2) 0%,
+        transparent 70%
+    );
+    animation: ripple 2s linear infinite;
+}
+
+/* 添加涟漪动画 */
+@keyframes ripple {
+    0% {
+        transform: scale(0.5);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0;
+    }
+}
+
+/* 不同页面的激活状态颜色 */
+.nav a[href="index.html"].active {
+    background: linear-gradient(145deg, 
+        rgba(52, 152, 219, 0.6),
+        rgba(41, 128, 185, 0.6)
+    );
+}
+
+.nav a[href="culture.html"].active {
+    background: linear-gradient(145deg, 
+        rgba(230, 126, 34, 0.6),
+        rgba(211, 84, 0, 0.6)
+    );
+}
+
+.nav a[href="tourism.html"].active {
+    background: linear-gradient(145deg, 
+        rgba(155, 89, 182, 0.6),
+        rgba(142, 68, 173, 0.6)
+    );
+}
+
+.nav a[href="history.html"].active {
+    background: linear-gradient(145deg, 
+        rgba(241, 196, 15, 0.6),
+        rgba(243, 156, 18, 0.6)
+    );
+}
+
+.nav a[href="specialties.html"].active {
+    background: linear-gradient(145deg, 
+        rgba(46, 204, 113, 0.6),
+        rgba(39, 174, 96, 0.6)
+    );
+}
+
+.nav a[href="folklore.html"].active {
+    background: linear-gradient(145deg, 
+        rgba(26, 188, 156, 0.6),
+        rgba(22, 160, 133, 0.6)
+    );
+}
+
+.nav a[href="interaction.html"].active {
+    background: linear-gradient(145deg, 
+        rgba(231, 76, 60, 0.6),
+        rgba(192, 57, 43, 0.6)
+    );
+}
+
+.nav a[href="about.html"].active {
+    background: linear-gradient(145deg, 
+        rgba(52, 73, 94, 0.6),
+        rgba(44, 62, 80, 0.6)
+    );
+}
+
+.nav a[href="author.html"].active {
+    background: linear-gradient(145deg, 
+        rgba(127, 140, 141, 0.6),
+        rgba(149, 165, 166, 0.6)
+    );
+}
+
+/* 统一调整所有激活状态的阴影 */
+.nav a.active {
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.15);
+}
+
+/* 保持其他动画效果不变 */
+.nav a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.4),
+        transparent
+    );
+    animation: navShine 3s infinite;
+    animation-delay: calc(0.2s * var(--nav-index));
+}
+
+.nav-container a:nth-child(1) { --nav-index: 1; }
+.nav-container a:nth-child(2) { --nav-index: 2; }
+.nav-container a:nth-child(3) { --nav-index: 3; }
+.nav-container a:nth-child(4) { --nav-index: 4; }
+.nav-container a:nth-child(5) { --nav-index: 5; }
+.nav-container a:nth-child(6) { --nav-index: 6; }
+.nav-container a:nth-child(7) { --nav-index: 7; }
+.nav-container a:nth-child(8) { --nav-index: 8; }
+.nav-container a:nth-child(9) { --nav-index: 9; }
+
+@keyframes navShine {
+    0% {
+        background-position: -100% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+/* 移动端菜单按钮 */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.menu-toggle:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* 响应式导航栏 */
+@media screen and (max-width: 768px) {
+    .nav {
+        padding: 10px 15px;
+        position: relative;
+    }
+
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 101;
+    }
+
+    .nav-container {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+        background: #983636;
+        position: absolute;
+        top: 100%;
+        left: 0;
+
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-container.show {
+        display: flex;
+        z-index: 100;
+    }
+
+    .nav a {
+        width: 100%;
+        padding: 15px 20px;
+        text-align: center;
+        border-radius: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .nav a:last-child {
+        border-bottom: none;
+    }
+
+    .nav a:hover {
+        background: rgba(255, 255, 255, 0.15);
+    }
+
+    .nav a.active {
+        background: rgba(255, 255, 255, 0.9);
+        color: #983636;
+    }
+
+    /* 确保导航菜单在显示时不会被其他内容遮挡 */
+    .nav {
+        z-index: 1000;
+    }
+
+    /* 调整移动端头样式 */
+    .header {
+        padding: 5px 0;
+    }
+
+    .header img {
+        height: 30px;
+    }
+
+    .header-text {
+        font-size: 16px;
+        margin: 0 10px;
+    }
+
+    .header.hide {
+        height: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+
+    .nav-container.show {
+        display: flex;
+        z-index: 100;
+        position: fixed;
+        top: 44px;
+        left: 0;
+        right: 0;
+    }
+}
+
+/* 添加动画效果 */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.nav-container.show {
+    animation: slideDown 0.3s ease-out;
+}
+
+/* 页面内通用样式 */
+.content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* 页脚样式 */
+.footer {
+    background-color: #f8f8f8;
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+    color: #3c3434;
+    border-top: 1px solid #e7e7e7;
+}
+
+/* 修改头部Logo样式 */
+.header img {
+    transition: all 0.3s ease;
+}
+
+/* 修改头部文字样式 */
+.header-text {
+    position: relative;
+    overflow: hidden;
+}
+
+.header-text::after {
+    display: none;
+}
+
+/* 移除Logo动画 */
+@keyframes logoGlow {
+    /* 删除 */
+}
+
+.nav-container a.ai-assistant {
+    background: linear-gradient(45deg, #4CAF50, #45a049);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.nav-container a.ai-assistant:hover {
+    background: linear-gradient(45deg, #45a049, #4CAF50);
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.ai-assistant {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+    color: #fff;
+    padding: 16px 32px 16px 28px;
+    border-radius: 32px;
+    font-size: 20px;
+    font-weight: bold;
+    box-shadow: 0 8px 32px rgba(67, 233, 123, 0.25), 0 2px 8px rgba(0,0,0,0.12);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    transition: transform 0.2s, box-shadow 0.2s, background 0.3s;
+    animation: ai-glow 2s infinite alternate;
+}
+
+.ai-assistant:hover {
+    transform: scale(1.07) translateY(-2px);
+    box-shadow: 0 12px 36px rgba(67, 233, 123, 0.35), 0 4px 16px rgba(0,0,0,0.18);
+    background: linear-gradient(135deg, #38f9d7 0%, #43e97b 100%);
+}
+
+.ai-assistant i {
+    font-size: 1.3em;
+    margin-right: 8px;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.12));
+}
+
+@keyframes ai-glow {
+    0% { box-shadow: 0 0 16px #43e97b55, 0 2px 8px rgba(0,0,0,0.12);}
+    100% { box-shadow: 0 0 32px #38f9d799, 0 8px 32px rgba(67, 233, 123, 0.25);}
+}
+
+

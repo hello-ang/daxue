@@ -1,0 +1,1483 @@
+/* 文化特色页面样式 */
+.content {
+    padding: 10px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 通用部分 */
+.culture-section {
+    padding: 2rem 0;
+    background: linear-gradient(135deg, #f9f6f2 0%, #f1e8e0 100%);
+    width: 100%;
+    max-width: 1200px;
+    margin: 1.5rem auto;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.culture-section:hover {
+    transform: translateY(-5px);
+}
+
+.culture-section h2 {
+    font-size: 2.8rem;
+    color: #983636;
+    text-align: center;
+    margin-bottom: 2.5rem;
+    position: relative;
+    padding-bottom: 1.2rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    font-family: "华文行楷", cursive;
+}
+
+.culture-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #983636, transparent);
+    animation: widthPulse 2s infinite;
+}
+
+@keyframes widthPulse {
+    0%, 100% { width: 80px; }
+    50% { width: 120px; }
+}
+
+/* 两列布局容器样式 */
+
+/* 非物质文化遗产部分 */
+.culture-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.2rem;
+    padding: 0 1rem;
+}
+
+.culture-item {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(152, 54, 54, 0.1);
+    padding-bottom: 0.8rem;
+}
+
+.culture-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(152, 54, 54, 0.12);
+}
+
+.culture-item img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.culture-item:hover img {
+    transform: scale(1.05);
+}
+
+.item-content {
+    padding: 1rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.9), white);
+}
+
+.item-content h3 {
+    font-size: 1.1rem;
+    color: #983636;
+    margin-bottom: 0.6rem;
+    font-weight: bold;
+    position: relative;
+    padding-left: 0.6rem;
+}
+
+.item-content h3::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3px;
+    height: 80%;
+    background: #983636;
+    border-radius: 2px;
+}
+
+.item-content p {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 0.8rem;
+}
+
+.tags {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: auto;
+    flex-wrap: wrap;
+}
+
+.tag {
+    background: rgba(152, 54, 54, 0.1);
+    color: #983636;
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+}
+
+.tag:hover {
+    background: #983636;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* 传统技艺部分 */
+.crafts-showcase {
+    padding: 0 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.craft-item {
+    background: white;
+    border-radius: 15px;
+    padding: 1.2rem;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(75, 92, 173, 0.1);
+}
+
+.craft-item:last-child {
+    margin-bottom: 0;
+}
+
+.craft-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(75, 92, 173, 0.12);
+}
+
+.craft-image {
+    flex: none;
+    width: 100%;
+    height: 160px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.craft-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.craft-item:hover .craft-image img {
+    transform: scale(1.05);
+}
+
+.craft-content {
+    flex: 1;
+    text-align: center;
+    padding: 0 0.8rem;
+}
+
+.craft-content h3 {
+    font-size: 1.3rem;
+    color: #4B5CAD;
+    margin-bottom: 0.6rem;
+    font-family: "华文行楷", cursive;
+}
+
+.craft-content p {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 0.8rem;
+}
+
+.craft-features {
+    display: flex;
+    gap: 0.6rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.craft-features span {
+    background: rgba(75, 92, 173, 0.1);
+    color: #4B5CAD;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.craft-features span:hover {
+    background: #4B5CAD;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* 响应式布局 */
+@media (max-width: 1200px) {
+    .culture-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 0.8rem;
+        padding: 0 0.8rem;
+    }
+    
+    .culture-item img {
+        height: 120px;
+    }
+
+    .item-content {
+        padding: 1rem;
+    }
+
+    .item-content h3 {
+        font-size: 1.1rem;
+    }
+
+    .item-content p {
+        font-size: 0.9rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .tag {
+        padding: 0.3rem 0.6rem;
+        font-size: 0.8rem;
+    }
+
+    .craft-item {
+        flex-direction: row;
+        text-align: left;
+        gap: 1.5rem;
+        padding: 1.5rem;
+    }
+
+    .craft-item:nth-child(even) {
+        flex-direction: row-reverse;
+    }
+    
+    .craft-image {
+        width: 200px;
+        height: 150px;
+    }
+
+    .craft-content {
+        text-align: left;
+    }
+
+    .craft-features {
+        justify-content: flex-start;
+    }
+    
+    .craft-content h3 {
+        font-size: 1.3rem;
+    }
+
+    .craft-content p {
+        font-size: 0.95rem;
+        margin-bottom: 1rem;
+    }
+
+    .craft-features span {
+        padding: 0.4rem 1rem;
+        font-size: 0.85rem;
+    }
+
+    .crafts-showcase {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1rem;
+        padding: 0 0.8rem;
+    }
+
+    .folklore-container {
+        gap: 1.5rem;
+        padding: 0.8rem 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .culture-section {
+        padding: 1.5rem 0.8rem;
+        margin: 0.8rem auto;
+        max-width: 100%;
+        border-radius: 10px;
+    }
+
+    .culture-section h2 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        padding-bottom: 0.6rem;
+    }
+
+    .culture-section h2::after {
+        width: 60px;
+    }
+    
+    .culture-item img {
+        height: 120px;
+    }
+
+    .item-content {
+        padding: 0.6rem;
+    }
+
+    .item-content h3 {
+        font-size: 0.9rem;
+        margin-bottom: 0.4rem;
+        padding-left: 0.4rem;
+    }
+
+    .item-content h3::before {
+        width: 2px;
+        height: 50%;
+    }
+
+    .item-content p {
+        font-size: 0.8rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .tag {
+        padding: 0.1rem 0.4rem;
+        border-radius: 8px;
+        font-size: 0.7rem;
+    }
+    
+    .crafts-showcase {
+        gap: 0.6rem;
+        padding: 0 0.5rem;
+    }
+
+    .craft-item {
+        flex-direction: column;
+        gap: 0.8rem;
+        padding: 0.8rem;
+    }
+
+    .craft-item:nth-child(even) {
+        flex-direction: column;
+    }
+    
+    .craft-image {
+        width: 100%;
+        height: 120px;
+        border-radius: 6px;
+    }
+
+    .craft-content {
+        text-align: left;
+    }
+
+    .craft-features {
+        justify-content: flex-start;
+    }
+    
+    .craft-content h3 {
+        font-size: 1rem;
+    }
+
+    .craft-content p {
+        font-size: 0.85rem;
+        margin-bottom: 0.6rem;
+    }
+
+    .craft-features span {
+        padding: 0.2rem 0.6rem;
+        font-size: 0.7rem;
+    }
+
+    .folklore-container {
+        gap: 1rem;
+        padding: 0.8rem 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .culture-section h2 {
+        font-size: 1.8rem;
+    }
+
+    .culture-item,
+    .craft-item {
+        padding: 0.6rem;
+    }
+
+    .culture-item img,
+    .craft-image {
+        height: 100px;
+    }
+
+    .item-content h3,
+    .craft-content h3 {
+        font-size: 0.85rem;
+    }
+
+    .item-content p,
+    .craft-content p {
+        font-size: 0.7rem;
+    }
+
+    .folklore-container {
+        gap: 0.5rem;
+        padding: 0.5rem 0;
+    }
+
+    .folklore-image,
+    .inheritor-image {
+        height: 180px;
+    }
+
+    .inheritor-tag {
+        top: 0.5rem;
+        right: 0.5rem;
+        padding: 0.2rem 0.5rem;
+        border-radius: 10px;
+        font-size: 0.7rem;
+    }
+
+    .inheritor-content {
+        padding: 1rem;
+        gap: 0.5rem;
+    }
+
+    .inheritor-content h3 {
+        font-size: 1.2rem;
+    }
+
+    .inheritor-title {
+        font-size: 0.8rem;
+        padding-left: 0.5rem;
+    }
+
+    .inheritor-title::before {
+        width: 2px;
+        height: 60%;
+    }
+
+    .inheritor-content p {
+        font-size: 0.8rem;
+        line-height: 1.3;
+    }
+
+    .inheritor-achievements {
+        gap: 0.3rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .inheritor-achievements .achievement {
+        padding: 0.2rem 0.5rem;
+        border-radius: 8px;
+        font-size: 0.7rem;
+        gap: 0.1rem;
+    }
+
+    .inheritor-achievements .achievement i {
+        font-size: 0.8rem;
+    }
+
+    .inheritor-stats {
+        gap: 0.6rem;
+        margin-top: 0.6rem;
+        padding-top: 0.6rem;
+    }
+
+    .stat-number {
+        font-size: 1.1rem;
+    }
+
+    .stat-label {
+        font-size: 0.7rem;
+    }
+}
+
+/* 文化活动样式 */
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 20px;
+}
+
+.event-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+}
+
+.event-image {
+    position: relative;
+    height: 200px;
+}
+
+.event-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.event-date {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(152, 54, 54, 0.9);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+}
+
+.event-info {
+    padding: 20px;
+}
+
+.event-info h3 {
+    color: #983636;
+    margin-bottom: 15px;
+}
+
+.event-details {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+    color: #666;
+}
+
+/* 文化体验样式 */
+.experience-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.experience-item {
+    background: linear-gradient(135deg, #fff 0%, #f9f6f2 100%);
+    border-radius: 20px;
+    padding: 2rem;
+    transition: all 0.4s ease;
+    border: 1px solid rgba(152, 54, 54, 0.1);
+}
+
+.experience-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(152, 54, 54, 0.1);
+    border-color: rgba(152, 54, 54, 0.3);
+}
+
+.experience-icon {
+    font-size: 3rem;
+    color: #983636;
+    margin-bottom: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.experience-item:hover .experience-icon {
+    transform: scale(1.1);
+}
+
+.experience-btn {
+    background: linear-gradient(135deg, #983636 0%, #7a2c2c 100%);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 30px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(152, 54, 54, 0.2);
+}
+
+.experience-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(152, 54, 54, 0.3);
+}
+
+/* 响应式调整 */
+@media screen and (max-width: 768px) {
+    .events-grid,
+    .inheritors-slider,
+    .experience-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* 文化页面卡片样式 */
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    color: #983636;
+    margin: 1rem 0 2rem;
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(to right, transparent, #983636, transparent);
+}
+
+.culture-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    padding: 1rem;
+    width: 100%;
+}
+
+.culture-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+}
+
+.culture-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.culture-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.culture-content {
+    padding: 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.culture-title {
+    font-size: 1.25rem;
+    color: #983636;
+    margin-bottom: 0.75rem;
+    font-weight: bold;
+}
+
+.culture-description {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.5;
+    flex: 1;
+}
+
+/* 响应式布局 */
+@media (max-width: 992px) {
+    .culture-cards {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .culture-cards {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .culture-image {
+        height: 180px;
+    }
+}
+
+/* 历史名人部分样式 */
+#historical-figures {
+    padding: 0;
+}
+
+.figures-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    padding: 0 1rem;
+}
+
+.figure-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(152, 54, 54, 0.1);
+}
+
+.figure-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(152, 54, 54, 0.12);
+}
+
+.figure-image {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.figure-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.figure-card:hover .figure-image img {
+    transform: scale(1.05);
+}
+
+.figure-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, transparent 60%, rgba(0, 0, 0, 0.6));
+    display: flex;
+    align-items: flex-end;
+    padding: 1rem;
+}
+
+.figure-era {
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.figure-content {
+    padding: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    background: linear-gradient(135deg, #fff 0%, #f9f6f2 100%);
+}
+
+.figure-content h3 {
+    font-size: 1.4rem;
+    color: #983636;
+    margin: 0;
+    font-family: "华文行楷", cursive;
+}
+
+.figure-title {
+    color: #666;
+    font-size: 0.9rem;
+    font-style: italic;
+    position: relative;
+    padding-left: 0.8rem;
+}
+
+.figure-title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3px;
+    height: 80%;
+    background: #983636;
+    border-radius: 2px;
+}
+
+.figure-content p {
+    color: #666;
+    line-height: 1.5;
+    font-size: 0.9rem;
+    margin: 0;
+    text-align: justify;
+    position: relative;
+    padding-left: 0;
+    border-left: none;
+}
+
+.figure-achievements {
+    display: flex;
+    gap: 0.6rem;
+    margin-top: 0.8rem;
+    flex-wrap: wrap;
+}
+
+.achievement {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    background: rgba(152, 54, 54, 0.1);
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+}
+
+.achievement:hover {
+    background: #983636;
+    transform: translateY(-2px);
+}
+
+.achievement:hover span {
+    color: white;
+}
+
+.achievement-icon {
+    font-size: 1rem;
+}
+
+.achievement span {
+    color: #983636;
+    font-size: 0.85rem;
+    transition: color 0.3s ease;
+}
+
+/* 民俗文化部分 */
+.folklore-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    padding: 1rem 0;
+    margin: 0;
+}
+
+.folklore-item {
+    display: flex;
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    flex-direction: column;
+}
+
+.folklore-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(152, 54, 54, 0.15);
+}
+
+.folklore-item:nth-child(even) {
+    flex-direction: column;
+}
+
+.folklore-image {
+    flex: none;
+    width: 100%;
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+}
+
+.folklore-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.folklore-item:hover .folklore-image img {
+    transform: scale(1.1);
+}
+
+.folklore-content {
+    flex: 1;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background: linear-gradient(135deg, #fff 0%, #f9f6f2 100%);
+}
+
+.folklore-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    animation: float 3s ease-in-out infinite;
+}
+
+.folklore-content h3 {
+    font-size: 1.8rem;
+    color: #983636;
+    margin-bottom: 1rem;
+    font-family: "华文行楷", cursive;
+    position: relative;
+    padding-left: 1rem;
+}
+
+.folklore-content h3::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 70%;
+    background: #983636;
+    border-radius: 2px;
+}
+
+.folklore-content p {
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+.folklore-features {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.folklore-features span {
+    background: rgba(152, 54, 54, 0.1);
+    color: #983636;
+    padding: 0.5rem 1.2rem;
+    border-radius: 20px;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.folklore-features span:hover {
+    background: #983636;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.folklore-time {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #666;
+    font-size: 1rem;
+    margin-top: auto;
+}
+
+.time-icon {
+    font-size: 1.2rem;
+}
+
+.folklore-details {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #666;
+}
+
+.detail-icon {
+    font-size: 1.2rem;
+}
+
+.folklore-calendar {
+    display: flex;
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+.calendar-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    background: rgba(152, 54, 54, 0.05);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.calendar-item:hover {
+    background: rgba(152, 54, 54, 0.1);
+    transform: translateY(-5px);
+}
+
+.calendar-item .month {
+    font-size: 1.1rem;
+    color: #983636;
+    font-weight: bold;
+    margin-bottom: 0.3rem;
+}
+
+.calendar-item .event {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* 响应式设计 */
+@media (max-width: 992px) {
+    .folklore-item,
+    .folklore-item:nth-child(even) {
+        flex-direction: column;
+    }
+
+    .folklore-image {
+        height: 250px;
+    }
+
+    .folklore-content {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .folklore-container {
+        gap: 1rem;
+        padding: 0.8rem 0;
+    }
+
+    .folklore-item {
+        padding: 1rem;
+    }
+
+    .folklore-content h3 {
+        font-size: 1.5rem;
+    }
+
+    .folklore-content p {
+        font-size: 1rem;
+    }
+
+    .folklore-features {
+        gap: 0.8rem;
+    }
+
+    .folklore-features span {
+        padding: 0.4rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .folklore-details,
+    .folklore-calendar {
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+}
+
+/* 文化传承人部分 */
+#inheritors {
+    padding: 0;
+}
+
+.inheritors-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    padding: 0 1rem;
+}
+
+.inheritor-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(152, 54, 54, 0.1);
+}
+
+.inheritor-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(152, 54, 54, 0.12);
+}
+
+.inheritor-image {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+}
+
+.inheritor-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.inheritor-card:hover .inheritor-image img {
+    transform: scale(1.05);
+}
+
+.inheritor-tag {
+    position: absolute;
+    top: 0.8rem;
+    right: 0.8rem;
+    background: rgba(152, 54, 54, 0.9);
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.inheritor-content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    background: linear-gradient(135deg, #fff 0%, #f9f6f2 100%);
+}
+
+.inheritor-content h3 {
+    font-size: 1.6rem;
+    color: #983636;
+    margin: 0;
+    font-family: "华文行楷", cursive;
+}
+
+.inheritor-title {
+    color: #666;
+    font-size: 1rem;
+    font-weight: 500;
+    position: relative;
+    padding-left: 0.8rem;
+}
+
+.inheritor-title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3px;
+    height: 80%;
+    background: #983636;
+    border-radius: 2px;
+}
+
+.inheritor-content p {
+    color: #666;
+    line-height: 1.5;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.inheritor-achievements {
+    display: flex;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.8rem;
+}
+
+.inheritor-achievements .achievement {
+    background: rgba(152, 54, 54, 0.1);
+    color: #983636;
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    transition: all 0.3s ease;
+}
+
+.inheritor-achievements .achievement:hover {
+    background: #983636;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.inheritor-achievements .achievement i {
+    font-size: 1rem;
+}
+
+.inheritor-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.8rem;
+    margin-top: 0.8rem;
+    padding-top: 0.8rem;
+    border-top: 1px solid rgba(152, 54, 54, 0.1);
+}
+
+.stat-item {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.stat-number {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #983636;
+}
+
+.stat-label {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+/* 响应式设计 */
+@media (max-width: 1200px) {
+    /* Removed .figures-container rule in media query */
+    /* Removed .inheritors-container rule in media query */
+    
+    .culture-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 0.8rem;
+        padding: 0 0.8rem;
+    }
+    
+    .crafts-showcase {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1rem;
+        padding: 0 0.8rem;
+    }
+
+    .folklore-container {
+        gap: 1.5rem;
+        padding: 0.8rem 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .culture-section {
+        padding: 1.5rem 0.8rem;
+        margin: 0.8rem auto;
+        max-width: 100%;
+        border-radius: 10px;
+    }
+
+    .culture-section h2 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        padding-bottom: 0.6rem;
+    }
+
+    .culture-section h2::after {
+        width: 60px;
+    }
+    
+    .culture-item img {
+        height: 120px;
+    }
+
+    .item-content {
+        padding: 0.6rem;
+    }
+
+    .item-content h3 {
+        font-size: 0.9rem;
+        margin-bottom: 0.4rem;
+        padding-left: 0.4rem;
+    }
+
+    .item-content h3::before {
+        width: 2px;
+        height: 50%;
+    }
+
+    .item-content p {
+        font-size: 0.8rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .tag {
+        padding: 0.1rem 0.4rem;
+        border-radius: 8px;
+        font-size: 0.7rem;
+    }
+    
+    .crafts-showcase {
+        gap: 0.6rem;
+        padding: 0 0.5rem;
+    }
+
+    .craft-item {
+        flex-direction: column;
+        gap: 0.8rem;
+        padding: 0.8rem;
+    }
+
+    .craft-item:nth-child(even) {
+        flex-direction: column;
+    }
+    
+    .craft-image {
+        width: 100%;
+        height: 120px;
+        border-radius: 6px;
+    }
+
+    .craft-content {
+        text-align: left;
+    }
+
+    .craft-features {
+        justify-content: flex-start;
+    }
+    
+    .craft-content h3 {
+        font-size: 1rem;
+    }
+
+    .craft-content p {
+        font-size: 0.85rem;
+        margin-bottom: 0.6rem;
+    }
+
+    .craft-features span {
+        padding: 0.2rem 0.6rem;
+        font-size: 0.7rem;
+    }
+
+    .folklore-container {
+        gap: 1rem;
+        padding: 0.8rem 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .culture-section h2 {
+        font-size: 1.8rem;
+    }
+
+    .culture-item,
+    .craft-item {
+        padding: 0.6rem;
+    }
+
+    .culture-item img,
+    .craft-image {
+        height: 100px;
+    }
+
+    .item-content h3,
+    .craft-content h3 {
+        font-size: 0.85rem;
+    }
+
+    .item-content p,
+    .craft-content p {
+        font-size: 0.7rem;
+    }
+
+    .folklore-container {
+        gap: 0.5rem;
+        padding: 0.5rem 0;
+    }
+
+    .folklore-image,
+    .inheritor-image {
+        height: 180px;
+    }
+
+    .inheritor-tag {
+        top: 0.5rem;
+        right: 0.5rem;
+        padding: 0.2rem 0.5rem;
+        border-radius: 10px;
+        font-size: 0.7rem;
+    }
+
+    .inheritor-content {
+        padding: 1rem;
+        gap: 0.5rem;
+    }
+
+    .inheritor-content h3 {
+        font-size: 1.2rem;
+    }
+
+    .inheritor-title {
+        font-size: 0.8rem;
+        padding-left: 0.5rem;
+    }
+
+    .inheritor-title::before {
+        width: 2px;
+        height: 60%;
+    }
+
+    .inheritor-content p {
+        font-size: 0.8rem;
+        line-height: 1.3;
+    }
+
+    .inheritor-achievements {
+        gap: 0.3rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .inheritor-achievements .achievement {
+        padding: 0.2rem 0.5rem;
+        border-radius: 8px;
+        font-size: 0.7rem;
+        gap: 0.1rem;
+    }
+
+    .inheritor-achievements .achievement i {
+        font-size: 0.8rem;
+    }
+
+    .inheritor-stats {
+        gap: 0.6rem;
+        margin-top: 0.6rem;
+        padding-top: 0.6rem;
+    }
+
+    .stat-number {
+        font-size: 1.1rem;
+    }
+
+    .stat-label {
+        font-size: 0.7rem;
+    }
+}
